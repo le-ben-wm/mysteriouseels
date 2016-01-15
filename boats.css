@@ -151,3 +151,17 @@ a:visited#reservecheck {
 a:active#reservecheck {
     color: white;
 }
+.reserveData {
+    width: 90%;
+    border-collapse: collapse;
+}
+.tableData {
+    width: 20%;
+}
+.reserveData, .tableHead, .tableData {
+    border: 1px solid #a1c5ff;
+    border-width: 2px;
+}
+.tableHead, .tableData {
+    padding: 5px;
+}

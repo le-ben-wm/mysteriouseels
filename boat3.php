@@ -36,8 +36,8 @@
     <h4>Full Day: $700</h4>
 </div>
 <!--Reservation information-->
-<div id="form">
-    <form action="users.php" method="post">
+<div>
+    <form action="users.php" method="post" id="form">
         First name
         <input type="text" name="fname" id="fname"/><br>
         Last name
@@ -56,8 +56,8 @@
         <input type="date" name="reservedate" id="reservedate"><br>
         Time Slot for Reservation
         <select id="timeslot" name="timeslot">
-            <option value="halfday">Half day</option>
-            <option value="fullday">Full day</option>
+            <option value="Half Day">Half day</option>
+            <option value="Full Day">Full day</option>
         </select>
         <input type="hidden" name="boattype" value="Cuddy Cabins"><br>
         <input type="submit" value="Submit" name="formSubmit" />

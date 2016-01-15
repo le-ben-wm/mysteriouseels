@@ -2,7 +2,7 @@
 require_once('connection.php');
 $error = false;
 $success = false;
-if(@$_POST['formSubmit']){
+if($_POST['formSubmit']){
     if(!$_POST['fname']){
         $error .= '<p>First name is a required field!</p>';
     }
@@ -73,12 +73,34 @@ VALUES (:fname, :lname, :email, :pword, :phone, :ccard, :cvv, :reservedate, :tim
     <?php
     if($result){
         $success = "The reservation for " . $_POST['fname'] . " " . $_POST['lname'] . " was successfully created.";
-        echo $success;
     }else{
         $success = "There was an error saving " . $_POST['email'];
-        echo $error;
+    }
+    if ($success) {
+        echo $success;
     }
     ?><br>
+    <br>
+    <table align="center" class="reserveData">
+        <thead>
+            <tr>
+                <th class="tableHead">Name</th>
+                <th class="tableHead">Email</th>
+                <th class="tableHead">Reservation Date</th>
+                <th class="tableHead">Time Slot</th>
+                <th class="tableHead">Boat Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="tableData"><?php echo $_POST['fname'] . " " . $_POST['lname']?></td>
+                <td class="tableData"><?php echo $_POST['email']?></td>
+                <td class="tableData"><?php echo $_POST['reservedate']?></td>
+                <td class="tableData"><?php echo $_POST['timeslot']?></td>
+                <td class="tableData"><?php echo $_POST['boattype']?></td>
+            </tr>
+        </tbody>
+    </table>
     <button id="myButton" class="homeButton">Back to Home page</button>
     <script type="text/javascript">
         document.getElementById("myButton").onclick = function() {
